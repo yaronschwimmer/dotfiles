@@ -5,7 +5,7 @@ local GITHUB_API_TOKEN = secrets["gh_token"]
 local GITHUB_REPOS = {
     {"snyk/registry", true},
     {"snyk/docker-registry-agent", false},
-    {"snyk/docker-deps", false},
+--    {"snyk/docker-deps", false},
     {"snyk/docker-registry-v2-client", false},
     {"snyk/snyk-docker-pull", false},
     {"snyk/container-security-tests", false}

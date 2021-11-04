@@ -215,9 +215,10 @@ if [ -f "/Users/yaron/.credentials" ]; then
     source /Users/yaron/.credentials
 fi
 
-export NVM_DIR=~/.nvm
+#export NVM_DIR=~/.nvm
 
-source $(brew --prefix nvm)/nvm.sh
+#source $(brew --prefix nvm)/nvm.sh
+eval "$(fnm env)"
 
 #nvm() {
 #    echo "🚨 NVM not loaded! Loading now..."

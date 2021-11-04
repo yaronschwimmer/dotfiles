@@ -69,6 +69,7 @@ PACKAGES=(
     wget
     xsv
     yarn
+    fnm
 )
 
 echo "Installing packages..."
