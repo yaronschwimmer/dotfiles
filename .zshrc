@@ -159,6 +159,14 @@ function killport()
     lsof -i :$1 | awk 'NR!=1{print $2}' | xargs kill -9
 }
 
+function b64() {
+    echo -n "$1" | base64
+}
+
+function b64d() {
+    echo -n "$1" | base64 -d
+}
+
 alias ls='exa'
 alias ll='ls -ahlF'
 alias la='ls -A'
@@ -188,6 +196,7 @@ alias bat='bat --style=changes,numbers'
 alias cat=bat
 alias vi='nvim'
 alias kc='kubectl'
+
 
 ###################################
 ######## Environment ##############
@@ -246,4 +255,6 @@ if [ -f '/Users/yaron/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yaron/goo
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/yaron/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yaron/google-cloud-sdk/completion.zsh.inc'; fi
 
-
+export MCFLY_FUZZY=2
+export MCFLY_RESULTS=15
+eval "$(mcfly init zsh)"
