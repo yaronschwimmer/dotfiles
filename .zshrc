@@ -188,8 +188,8 @@ alias pbp=pbpaste
 alias pjq='pbpaste | jq .'
 
 alias sssh='ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
-# alias python='python3'
-# alias pip='pip3'
+alias python='python3'
+alias pip='pip3'
 alias meld="/Applications/Meld.app/Contents/MacOS/Meld"
 alias uuid="uuidgen | awk '{print tolower($1)}'"
 alias bat='bat --style=changes,numbers'
@@ -227,7 +227,7 @@ fi
 #export NVM_DIR=~/.nvm
 
 #source $(brew --prefix nvm)/nvm.sh
-eval "$(fnm env)"
+eval "$(fnm env --use-on-cd)"
 
 #nvm() {
 #    echo "🚨 NVM not loaded! Loading now..."
@@ -255,6 +255,6 @@ if [ -f '/Users/yaron/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yaron/goo
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/yaron/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yaron/google-cloud-sdk/completion.zsh.inc'; fi
 
-export MCFLY_FUZZY=2
-export MCFLY_RESULTS=15
+#export MCFLY_FUZZY=2
+export MCFLY_RESULTS=20
 eval "$(mcfly init zsh)"
