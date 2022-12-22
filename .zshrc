@@ -3,14 +3,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/yaron/.oh-my-zsh"
+#export ZSH="/Users/yaron/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="zsh2000"
-ZSH_THEME="yaron"
+#ZSH_THEME="yaron"
 #ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
@@ -77,10 +77,10 @@ plugins=(
     docker-compose
     golang
     zsh-autosuggestions
-    #    zsh-syntax-highlighting
+    zsh-syntax-highlighting
 )
 #export ZSH_HIGHLIGHT_MAXLENGTH=60
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -134,22 +134,6 @@ function up()
     cd $d
 }
 
-function _calc {
-    _arguments -C \
-        "1: :(expression)" \
-        "2: :(precision)"
-    }
-
-function calc() {
-    expr=$1
-    p=$2
-    if [ -z $p ]; then
-        p=0
-    fi
-    bc -l <<< "scale=$p; $expr"
-}
-compdef _calc calc
-
 function timestamp() {
     date +%s000
 }
@@ -188,8 +172,8 @@ alias pbp=pbpaste
 alias pjq='pbpaste | jq .'
 
 alias sssh='ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
-alias python='python3'
-alias pip='pip3'
+#alias python='python3'
+#alias pip='pip3'
 alias meld="/Applications/Meld.app/Contents/MacOS/Meld"
 alias uuid="uuidgen | awk '{print tolower($1)}'"
 alias bat='bat --style=changes,numbers'
@@ -224,18 +208,8 @@ if [ -f "/Users/yaron/.credentials" ]; then
     source /Users/yaron/.credentials
 fi
 
-#export NVM_DIR=~/.nvm
 
-#source $(brew --prefix nvm)/nvm.sh
 eval "$(fnm env --use-on-cd)"
-
-#nvm() {
-#    echo "🚨 NVM not loaded! Loading now..."
-#    unset -f nvm
-#    export NVM_PREFIX=$(brew --prefix nvm)
-#    [ -s "$NVM_PREFIX/nvm.sh" ] && . "$NVM_PREFIX/nvm.sh"
-#    nvm "$@"
-#}
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit
@@ -244,10 +218,8 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
-#if [ -f $(brew --prefix)/etc/profile.d/z.sh ]; then source $(brew --prefix)/etc/profile.d/z.sh; fi
 eval "$(jump shell --bind=z)"
 
-#zprof
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/yaron/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yaron/google-cloud-sdk/path.zsh.inc'; fi
@@ -255,6 +227,5 @@ if [ -f '/Users/yaron/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yaron/goo
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/yaron/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yaron/google-cloud-sdk/completion.zsh.inc'; fi
 
-#export MCFLY_FUZZY=2
-export MCFLY_RESULTS=20
-eval "$(mcfly init zsh)"
+export PATH="/usr/local/opt/binutils/bin:$PATH"
+eval "$(starship init zsh)"

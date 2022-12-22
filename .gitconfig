@@ -25,7 +25,7 @@
     cm = commit -am
     ca = commit -a --amend --no-edit
     pf = push --force-with-lease
-    br = branch
+    br = !git branch $1 && git checkout
     co = checkout
     df = diff
     dt = difftool
@@ -72,6 +72,7 @@
 	editor = nvim
 [push]
     default = simple
+	autoSetupRemote = true
 [commit]
     gpgsign = true
 [fetch]

@@ -70,6 +70,7 @@ PACKAGES=(
     xsv
     yarn
     fnm
+    starship
 )
 
 echo "Installing packages..."
@@ -97,7 +98,7 @@ CASKS=(
 )
 
 echo "Installing cask apps..."
-brew cask install ${CASKS[@]}
+brew install --cask ${CASKS[@]}
 
 echo "Installing fonts..."
 brew tap homebrew/cask-fonts
@@ -108,6 +109,7 @@ FONTS=(
   font-droidsansmono-nerd-font
   font-droidsansmono-nerd-font-mono
   font-fira-code
+  font-fira-code-nerd-font
   font-inconsolata
   font-inconsolata-for-powerline
   font-liberation-mono-for-powerline
@@ -126,7 +128,7 @@ FONTS=(
   font-ubuntu
   font-ubuntu-mono-derivative-powerline
 )
-brew cask install ${FONTS[@]}
+brew install --cask ${FONTS[@]}
 
 echo "Configuring macOS..."
 
