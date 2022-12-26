@@ -66,6 +66,7 @@ PACKAGES=(
     terminal-notifier
     tmux
     vim
+    neovim
     wget
     xsv
     yarn
