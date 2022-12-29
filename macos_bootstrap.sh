@@ -72,6 +72,7 @@ PACKAGES=(
     yarn
     fnm
     starship
+    antibody
 )
 
 echo "Installing packages..."
