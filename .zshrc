@@ -84,6 +84,9 @@ alias kc='kubectl'
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export HISTSIZE=100000                   # big big history
 export HISTFILESIZE=100000               # big big history
+export SAVEHIST=100000
+setopt share_history
+export LANG=en_US.UTF-8
 
 export GOPATH=$HOME/work/go
 export PATH=$PATH:$HOME/bin
