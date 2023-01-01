@@ -3,7 +3,7 @@ function bind_keys()
     hs.hotkey.bind("ctrl,shift", "a", nil, run_authy, nil, nil)
     hs.hotkey.bind("ctrl,shift", "s", nil, shrug, nil, nil)
     hs.hotkey.bind("ctrl,shift", "e", nil, private_email, nil, nil)
-    hs.hotkey.bind("ctrl,shift", "w", nil, snyk_email, nil, nil)
+    hs.hotkey.bind("ctrl,shift", "w", nil, work_email, nil, nil)
     hs.hotkey.bind("ctrl,shift", "g", nil, gpg, nil, nil)
     hs.hotkey.bind("ctrl,shift", "c", nil, capitalize, nil, nil)
     hs.hotkey.bind("ctrl,shift", "z", nil, get_zip_code, nil, nil)
@@ -18,11 +18,11 @@ function shrug()
 end
 
 function private_email()
-    hs.eventtap.keyStrokes("yaronschwimmer@gmail.com")
+    hs.eventtap.keyStrokes(secrets["email"])
 end
 
-function snyk_email()
-    hs.eventtap.keyStrokes("yaron.schwimmer@snyk.io")
+function work_email()
+    hs.eventtap.keyStrokes(secrets["work_mail"])
 end
 
 function gpg()
@@ -34,7 +34,7 @@ function capitalize()
 end
 
 function get_zip_code()
-    hs.eventtap.keyStrokes("5331904")
+    hs.eventtap.keyStrokes(secrets["zipcode"])
 end
 
 bind_keys()
