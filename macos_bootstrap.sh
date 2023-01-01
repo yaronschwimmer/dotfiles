@@ -88,7 +88,6 @@ CASKS=(
     google-chrome
     hammerspoon
     iterm2
-    macvim
     meld
     robo-3t
     slack
