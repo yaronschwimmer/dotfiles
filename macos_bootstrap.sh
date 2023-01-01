@@ -96,6 +96,7 @@ CASKS=(
     typora
     visual-studio-code
     vlc
+    ngrok
 )
 
 echo "Installing cask apps..."

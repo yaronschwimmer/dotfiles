@@ -30,3 +30,11 @@ for file in $files; do
     ln -s $dir/$file ~/$file
 done
 
+# starship
+mkdir -p ~/.config
+ln -s $dir/.starship.toml ~/.config/starship.toml
+
+# antibody plugins
+cd ~
+antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+
