@@ -30,6 +30,14 @@ for file in $files; do
     ln -s $dir/$file ~/$file
 done
 
+# vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# neovim config
+mkdir -p ~/.config/nvim
+echo 'source ~/.vimrc' > ~/.config/nvim/init.vim
+
 # starship
 mkdir -p ~/.config
 ln -s $dir/starship.toml ~/.config/starship.toml
