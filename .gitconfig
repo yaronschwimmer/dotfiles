@@ -74,7 +74,7 @@
     default = simple
 	autoSetupRemote = true
 [commit]
-    gpgsign = true
+    gpgsign = false
 [fetch]
 	prune = true
 [pull]

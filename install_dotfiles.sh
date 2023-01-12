@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".gitconfig .vimrc .zshrc .hammerspoon .zsh_plugins.txt"    # list of files/folders to symlink in homedir
+files=".gitconfig .vimrc .zshrc .hammerspoon .antigenrc"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -32,9 +32,6 @@ done
 
 # starship
 mkdir -p ~/.config
-ln -s $dir/.starship.toml ~/.config/starship.toml
+ln -s $dir/starship.toml ~/.config/starship.toml
 
-# antibody plugins
-cd ~
-antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 

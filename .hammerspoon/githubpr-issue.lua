@@ -3,20 +3,20 @@ local GITHUB_API_PATH = "https://api.github.com"
 local GITHUB_API_USER = "yaronschwimmer"
 local GITHUB_API_TOKEN = secrets["gh_token"]
 local GITHUB_REPOS = {
-    {"snyk/registry", true},
+--    {"snyk/registry", true},
 --    {"snyk/docker-registry-agent", false},
 --    {"snyk/docker-deps", false},
 --    {"snyk/docker-registry-v2-client", false},
 --    {"snyk/snyk-docker-pull", false},
 --    {"snyk/container-security-tests", false},
-    {"snyk/snyk-docker-plugin", false},
-    {"snyk/hash-lookup", false},
-    {"snyk/rpm-parser", false},
-    {"snyk/key-binary-lookup", false},
-    {"snyk/deb-semver", false},
-    {"snyk/binary-to-maven-translator", false},
-    {"snyk/rpm-semver", false},
-    {"snyk/alpine-semver", false},
+--    {"snyk/snyk-docker-plugin", false},
+--    {"snyk/hash-lookup", false},
+--    {"snyk/rpm-parser", false},
+--    {"snyk/key-binary-lookup", false},
+--    {"snyk/deb-semver", false},
+--    {"snyk/binary-to-maven-translator", false},
+--    {"snyk/rpm-semver", false},
+--    {"snyk/alpine-semver", false},
 }
 
 local rate_limit_percentage

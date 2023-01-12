@@ -20,7 +20,7 @@ xcode-select --install
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
     echo "Installing homebrew..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Update homebrew recipes
@@ -72,7 +72,7 @@ PACKAGES=(
     yarn
     fnm
     starship
-    antibody
+    antigen
 )
 
 echo "Installing packages..."
@@ -93,7 +93,6 @@ CASKS=(
     slack
     spectacle
     sublime-text
-    typora
     visual-studio-code
     vlc
     ngrok
@@ -106,17 +105,14 @@ echo "Installing fonts..."
 brew tap homebrew/cask-fonts
 FONTS=(
   font-anonymous-pro
-  font-dejavu-sans-mono-for-powerline
   font-droid-sans-mono-for-powerline
-  font-droidsansmono-nerd-font
-  font-droidsansmono-nerd-font-mono
+  font-droid-sans-mono-nerd-font
   font-fira-code
   font-fira-code-nerd-font
   font-inconsolata
   font-inconsolata-for-powerline
   font-liberation-mono-for-powerline
-  font-liberationmono-nerd-font
-  font-liberationmono-nerd-font-mono
+  font-liberation-nerd-font
   font-meslo-lg
   font-meslo-lg font-input
   font-nixie-one
@@ -130,6 +126,7 @@ FONTS=(
   font-ubuntu
   font-ubuntu-mono-derivative-powerline
 )
+
 brew install --cask ${FONTS[@]}
 
 echo "Configuring macOS..."

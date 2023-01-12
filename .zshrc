@@ -67,8 +67,8 @@ alias pbp=pbpaste
 alias pjq='pbpaste | jq .'
 
 alias sssh='ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
-#alias python='python3'
-#alias pip='pip3'
+alias python='python3'
+alias pip='pip3'
 alias meld="/Applications/Meld.app/Contents/MacOS/Meld"
 alias uuid="uuidgen | awk '{print tolower($1)}'"
 alias bat='bat --style=changes,numbers'
@@ -101,6 +101,10 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
 
 export GPG_TTY=$(tty)
 
+# Case insensitive completions
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+autoload -Uz compinit && compinit
+
 # Credentials
 if [ -f "/Users/yaron/.credentials" ]; then
     source /Users/yaron/.credentials
@@ -127,9 +131,9 @@ if [ -f '/Users/yaron/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yar
 
 export PATH="/usr/local/opt/binutils/bin:$PATH"
 
-# Antibody plugins
-# When changing .zsh_plugins.txt, run the command `antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh` to update the static loading of plugins
-source ~/.zsh_plugins.sh
+# Antigen
+source /usr/local/share/antigen/antigen.zsh
+antigen init .antigenrc
 
 # starship prompt
 eval "$(starship init zsh)"
