@@ -133,7 +133,7 @@ export PATH="/usr/local/opt/binutils/bin:$PATH"
 
 # Antigen
 source /usr/local/share/antigen/antigen.zsh
-antigen init .antigenrc
+antigen init ~/.antigenrc
 
 # starship prompt
 eval "$(starship init zsh)"
