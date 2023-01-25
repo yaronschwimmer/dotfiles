@@ -1,12 +1,9 @@
 local secrets = require "secrets"
+local repos = require "repos"
 local GITHUB_API_PATH = "https://api.github.com"
 local GITHUB_API_USER = "yaronschwimmer"
 local GITHUB_API_TOKEN = secrets["gh_token"]
-local GITHUB_REPOS = {
-    {"snyk/registry", true},
-    {"snyk/docker-registry-agent", false},
-    {"snyk/docker-deps", false}
-}
+local GITHUB_REPOS = repos
 
 local rate_limit_percentage
 
