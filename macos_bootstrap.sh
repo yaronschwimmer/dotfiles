@@ -91,11 +91,11 @@ CASKS=(
     meld
     robo-3t
     slack
-    spectacle
     sublime-text
     visual-studio-code
     vlc
     ngrok
+    raycast
 )
 
 echo "Installing cask apps..."
