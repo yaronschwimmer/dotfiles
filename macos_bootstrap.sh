@@ -96,6 +96,7 @@ CASKS=(
     vlc
     ngrok
     raycast
+    alt-tab
 )
 
 echo "Installing cask apps..."
