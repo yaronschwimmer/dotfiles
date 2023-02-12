@@ -1,4 +1,14 @@
+# zshrc profiling. https://esham.io/2018/02/zsh-profiling
+#
+#zmodload zsh/datetime
+#setopt PROMPT_SUBST
+#PS4='+$EPOCHREALTIME %N:%i> '
 
+#logfile=$(mktemp zsh_profile.XXXXXXXX)
+#echo "Logging to $logfile"
+#exec 3>&2 2>$logfile
+
+#setopt XTRACE
 ###################################################
 #########  Aliases and functions ##################
 ###################################################
@@ -123,7 +133,6 @@ compinit -C
 
 eval "$(jump shell --bind=z)"
 
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/yaron/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yaron/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -138,3 +147,6 @@ antigen init ~/.antigenrc
 
 # starship prompt
 eval "$(starship init zsh)"
+
+#unsetopt XTRACE
+#exec 2>&3 3>&-
