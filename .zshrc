@@ -109,7 +109,8 @@ export PATH=$PATH:$HOME/dev/flutter/bin/
 export ANDROID_HOME=$HOME/Library/Android/sdk/
 export PATH=${PATH}:$HOME/Library/Android/sdk/tools
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
-
+export PATH=$PATH:$HOMEBREW_PREFIX/bin
+export PATH=$PATH:$HOMEBREW_PREFIX/share
 export GPG_TTY=$(tty)
 
 # Case insensitive completions
@@ -142,7 +143,7 @@ if [ -f '/Users/yaron/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yar
 export PATH="/usr/local/opt/binutils/bin:$PATH"
 
 # Antigen
-source /usr/local/share/antigen/antigen.zsh
+source $HOMEBREW_PREFIX/share/antigen/antigen.zsh
 antigen init ~/.antigenrc
 
 # starship prompt

@@ -26,12 +26,7 @@ fi
 # Update homebrew recipes
 brew update
 
-# Install ripgrep
-brew tap burntsushi/ripgrep https://github.com/BurntSushi/ripgrep.git
-brew install ripgrep-bin
-
 # Install GNU core utilities (those that come with OS X are outdated)
-brew tap homebrew/dupes
 brew install coreutils
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
@@ -41,7 +36,7 @@ brew install findutils
 brew install bash zsh
 
 # Confirm zsh location
-sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+sudo dscl . -create /Users/$USER UserShell $HOMEBREW_PREFIX/bin/zsh
 
 PACKAGES=(
     autoconf
@@ -79,7 +74,6 @@ echo "Installing packages..."
 brew install ${PACKAGES[@]}
 
 echo "Installing cask..."
-brew tap caskroom/cask
 
 CASKS=(
     docker
