@@ -39,6 +39,15 @@ function up()
     cd $d
 }
 
+# clone a repo and cd into the new dir. 
+# t removes leading path names and leaves just base name, r removes file extension
+# so `git://github.com/org/repo.git` turns into `repo` before cd-ing into it
+# https://zsh.sourceforge.io/Doc/Release/Expansion.html#Modifiers
+function clone() {
+    git clone $1
+    cd $1:t:r
+}
+
 function timestamp() {
     date +%s000
 }
@@ -114,8 +123,8 @@ export PATH=$PATH:$HOMEBREW_PREFIX/share
 export GPG_TTY=$(tty)
 
 # Case insensitive completions
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Credentials
 if [ -f "/Users/yaron/.credentials" ]; then
