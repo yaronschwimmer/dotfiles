@@ -1,4 +1,5 @@
 antigen bundle zsh-users/zsh-autosuggestions
+# antigen bundle marlonrichert/zsh-autocomplete --branch=main
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply

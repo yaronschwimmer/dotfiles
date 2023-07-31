@@ -122,6 +122,9 @@ export PATH=$PATH:$HOMEBREW_PREFIX/bin
 export PATH=$PATH:$HOMEBREW_PREFIX/share
 export GPG_TTY=$(tty)
 
+# Avoid printing % at the end of partial lines
+PROMPT_EOL_MARK=''
+
 # Case insensitive completions
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'

@@ -8,10 +8,7 @@ right_format = '$all'
 
 
 [directory]
-style = 'bold blue'
-
-
-
+style = '#57C7FF'
 
 
 [aws]
@@ -70,10 +67,12 @@ disabled = true
 
 [git_branch]
 format = '\[[$symbol$branch]($style)\]'
-symbol = " "
+symbol = " "
+style = '#b942f5'
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style))'
+style = '#5705f0'
 
 [golang]
 format = '\[[$symbol($version)]($style)\]'
